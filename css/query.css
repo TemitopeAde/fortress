@@ -1,0 +1,18 @@
+@media screen and (max-width: 768px) {
+  .login-container .logo-image {
+    display: none;
+  }
+
+  .login-container {
+    padding: 0 10px;
+  }
+
+  .input-div {
+    width: 100%;
+  }
+
+  .flex-between-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}

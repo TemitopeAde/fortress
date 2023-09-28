@@ -456,3 +456,29 @@ header button {
   margin-top: 1rem;
   display: block;
 }
+
+.input-div.password {
+  position: relative;
+}
+
+.login-form-container .show-password {
+  position: absolute;
+  right: 18px;
+  top: 54px;
+
+  
+}
+
+.login-form-container .show-password button {
+  background: none;
+  outline: none;
+
+  color: var(--text-blue);
+    text-align: right;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    height: auto;
+}
