@@ -34,18 +34,20 @@
         <h2>Welcome Back</h2>
         <p>Enter your email and password to sign in</p>
 
-        <form>
+        <form id="loginForm">
           <div class="input-div">
             <label for="">Username/ Email address</label>
-            <input type="text" placeholder="Enter email address" >
+            <input id="username" type="text" placeholder="Enter email address" >
+            <span id="usernameError" class="error"></span>
           </div>
           <div class="input-div password">
             <label for="">Password</label>
-            <input type="password" placeholder="Enter password" >
+            <input id="password" type="password" placeholder="Enter password" >
 
             <div class="show-password">
               <button>Show</button>
             </div>
+            <span id="passwordError" class="error"></span>
           </div>
           <div class="input-div input-div-flex">
             <input type="checkbox" id="remember-me">

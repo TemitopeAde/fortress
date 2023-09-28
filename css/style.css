@@ -482,3 +482,10 @@ header button {
     line-height: normal;
     height: auto;
 }
+
+.input-div span {
+  color: var(--text-red);
+  font-family: 'Inter';
+  display: block;
+  margin-top: 7px;
+}
