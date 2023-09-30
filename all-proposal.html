@@ -82,7 +82,7 @@
 
 
     <div class="contents">
-      
+
       <!-- component -->
       <!-- This is an example component -->
       <div id="all-proposal" class="mx-auto" style="margin-left: 350px; margin-top: 100px; margin-right: 50px;">
@@ -103,7 +103,7 @@
                 <input type="text" id="table-search"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Search for items">
-                <button class="open-btn" type="button">Create Proposal</button>
+                <button id="create-proposal" class="open-btn" type="button">Create Proposal</button>
               </div>
             </div>
 
@@ -484,7 +484,7 @@
       </div>
 
       <nav aria-label="Page navigation example">
-        
+
         <ul class="flex items-center -space-x-px h-8 text-sm">
           <li>
             <a href="#"
@@ -579,51 +579,95 @@
 
     </div>
     <div class="modal-container">
-      <section class="modal hidden">
-        <h3>Create Proposal</h3>
-        
-      
-        <form class="flex flex-col gap-y-6">
-          <div class="flex flex-between gap-x-4">
-            <div class="flex flex-col items-start w-full">
-              <label for="select-proposal-type">Select Proposal Type</label>
-              <select id="select-proposal-type">
-                <option value="">Proposal type 1</option>
-                <option value="">Proposal type 2</option>
-                <option value="">Proposal type 3</option>
-              </select>
-            </div>
-            <div class="flex flex-col items-start w-full">
-              <label for="select-proposal-type">Select Proposal Type</label>
-              <select id="select-proposal-type">
-                <option value="">Proposal type 1</option>
-                <option value="">Proposal type 2</option>
-                <option value="">Proposal type 3</option>
-              </select>
-            </div>
-          </div>
 
+
+      <section class="modal">
+        <div class="tab-one">
+          <div class="flex">
+            <h3>Create Proposal</h3>
+            <button class="btn-close">⨉</button>
+          </div>
           <div>
-            <label for="proposal-title">Proposal Title</label>
-            <input type="text">
-          </div>
+            <form class="flex flex-col gap-y-6" id="proposal-form" style="align-items: normal;">
+              <div class="flex flex-between gap-x-4">
+                <div class="flex flex-col items-start w-full" style="align-items: normal;">
+                  <label for="select-proposal-type">Select Proposal Type</label>
+                  <select id="select-proposal-type-1">
+                    <option value="" disabled selected>Select Proposal Type</option>
+                    <option value="">Proposal type 1</option>
+                    <option value="">Proposal type 2</option>
+                    <option value="">Proposal type 3</option>
+                  </select>
+                  <span id="type-1-error" class="error-text"></span>
+                </div>
+                <div class="flex flex-col items-start w-full" style="align-items: normal;">
+                  <label for="select-proposal-type">Select User</label>
+                  <select id="select-proposal-type-2">
+                    <option value="" disabled selected>Select User</option>
+                    <option value="">User 1</option>
+                    <option value="">User 2</option>
+                    <option value="">User 3</option>
+                    <option value="">User 4</option>
+                  </select>
+                  <span id="type-2-error" class="error-text"></span>
+                </div>
+              </div>
 
-          <div class="submit-proposal">
-            <button type="submit">Create Proposal</button>
+
+
+              <div>
+                <label for="proposal-title">Proposal Title</label>
+                <input class="mt-5" type="text" id="proposal-title">
+                <span id="title-error" class="error-text"></span>
+              </div>
+
+              <div
+                class="attached-file flex items-center justify-center border-dashed rounded-xl border border-2 border-sky-500 h-20"
+                style="border-color: #3F64CB; justify-content: center;">
+                <input type="file" id="myButton">
+                <button id="file-btn" class="flex flex-col items-center justify-center  gap-x-3">
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M16.19 2H7.81C4.17 2 2 4.17 2 7.81V16.18C2 19.83 4.17 22 7.81 22H16.18C19.82 22 21.99 19.83 21.99 16.19V7.81C22 4.17 19.83 2 16.19 2ZM16.82 10.82C16.53 11.11 16.05 11.11 15.76 10.82L12.75 7.81V18C12.75 18.41 12.41 18.75 12 18.75C11.59 18.75 11.25 18.41 11.25 18V7.81L8.24 10.82C7.95 11.11 7.47 11.11 7.18 10.82C7.03 10.67 6.96 10.48 6.96 10.29C6.96 10.1 7.04 9.9 7.18 9.76L11.47 5.47C11.61 5.33 11.8 5.25 12 5.25C12.2 5.25 12.39 5.33 12.53 5.47L16.82 9.76C17.11 10.05 17.11 10.52 16.82 10.82Z"
+                        fill="#3F64CB" />
+                    </svg>
+                  </span>
+                  <span id="file-label">Attach Proposal File here</span>
+
+                </button>
+                <span class="error" id="file-error"></span>
+              </div>
+
+              <div class="submit-proposal">
+                <button type="submit">Create Proposal</button>
+              </div>
+
+            </form>
           </div>
-        </form>
+        </div>
+
+        <div class="tab-two hidden">
+          <div>
+            <div class="img">
+              <img src="img/tick-circle.svg" alt="tick">
+            </div>
+
+            <h3> Proposal sent to Albert Flores</h3>
+          </div>
+        </div>
       </section>
-      
+      <div class="overlay hidden"></div>
     </div>
-    <div class="overlay hidden"></div>
-    
+
   </section>
 
   <script>
     const modal = document.querySelector(".modal");
     const overlay = document.querySelector(".overlay");
-    const openModalBtn = document.querySelector(".open-btn");
+    const openModalBtn = document.querySelector("#create-proposal");
     const closeModalBtn = document.querySelector(".btn-close");
+    
 
     // close modal function
     const closeModal = function () {
@@ -632,7 +676,7 @@
     };
 
     // close the modal when the close button and overlay is clicked
-    // closeModalBtn.addEventListener("click", closeModal);
+    closeModalBtn.addEventListener("click", closeModal);
     overlay.addEventListener("click", closeModal);
 
     // close modal when the Esc key is pressed
@@ -650,6 +694,92 @@
     // open modal event
     openModalBtn.addEventListener("click", openModal);
 
+
+    document.getElementById("file-btn").addEventListener("click", (e) => {
+      e.preventDefault();
+      document.getElementById("myButton").click();
+    });
+
+    // Listen for changes in the file input
+    document.getElementById("myButton").addEventListener("change", (e) => {
+      const fileInput = e.target;
+      const fileLabel = document.getElementById("file-label");
+
+      // Check if a file is selected
+      if (fileInput.files.length > 0) {
+        const fileName = fileInput.files[0].name;
+        fileLabel.textContent = fileName;
+      } else {
+        fileLabel.textContent = "Attach Proposal File here";
+      }
+    });
+
+
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("proposal-form");
+
+
+
+      form.addEventListener("submit", function (event) {
+        const fileInput = document.getElementById("myButton");
+        const fileError = document.getElementById("file-label");
+        const tabOne = document.querySelector(".tab-one")
+        const tabTwo = document.querySelector(".tab-two")
+
+
+
+        if (fileInput.files.length === 0) {
+          fileError.innerHTML = "Please select a file before submitting.";
+          fileError.classList.toggle("error-file")
+          event.preventDefault(); // Prevent form submission
+        } else {
+          fileError.textContent = ""; // Clear any previous error message
+        }
+
+
+        let isValid = true;
+
+        // Reset error messages
+        const errorElements = document.querySelectorAll(".error-text");
+        errorElements.forEach(errorElement => {
+          errorElement.textContent = "";
+        });
+
+        // Validation for Proposal Type 1
+        const type1Select = document.getElementById("select-proposal-type-1");
+        if (type1Select.value === "") {
+          isValid = false;
+          document.getElementById("type-1-error").textContent = "Select Proposal Type";
+        }
+
+        // Validation for Proposal Type 2
+        const type2Select = document.getElementById("select-proposal-type-2");
+        if (type2Select.value === "") {
+          isValid = false;
+          document.getElementById("type-2-error").textContent = "Select user";
+        }
+
+        // Validation for Proposal Title
+        const titleInput = document.getElementById("proposal-title");
+        const titleValue = titleInput.value.trim();
+        if (titleValue === "") {
+          isValid = false;
+          document.getElementById("title-error").textContent = "Proposal Title is required.";
+        }
+
+        // Add more validations for other fields here...
+
+        // Prevent form submission if validation fails
+        if (!isValid) {
+          event.preventDefault();
+        }
+        tabOne.classList.add("hidden")
+        tabTwo.classList.remove("hidden")
+      });
+    });
   </script>
 </body>
 
