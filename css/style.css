@@ -466,7 +466,7 @@ header button {
   right: 18px;
   top: 54px;
 
-  
+
 }
 
 .login-form-container .show-password button {
@@ -474,13 +474,13 @@ header button {
   outline: none;
 
   color: var(--text-blue);
-    text-align: right;
-    font-family: Inter;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    height: auto;
+  text-align: right;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  height: auto;
 }
 
 .input-div span {
@@ -488,4 +488,66 @@ header button {
   font-family: 'Inter';
   display: block;
   margin-top: 7px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ALL USERS TABLE */
+
+.contents.all-users-table form input {
+  width: 577px;
+  height: 57px;
+  border-radius: 8px;
+  background: var(--background-white);
+
+  font-family: DM Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--text-gray);
+  border: none;
+  caret-color: var(--text-red);
+  padding-left: 50px;
+}
+
+.contents.all-users-table form input:focus,
+.contents.all-users-table form input:focus-visible {
+  border: 1px solid var(--background-blue);
+}
+
+.contents.all-users-table .search-table {
+  position: relative;
+}
+
+.search-icon button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.search-table {}
+
+.search-table .search-icon {
+  position: absolute;
+  top: 19px;
+  left: 15px;
+}
+
+
+table {
+  font-family: 'Manrope';
+}
+
+tr {
+  text-transform: capitalize;
 }
