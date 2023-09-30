@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <script src="https://cdn.tailwindcss.com"></script>
+
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Inter&family=Manrope:wght@700&display=swap"
     rel="stylesheet">
@@ -47,7 +48,7 @@
 
     <div class="content container">
       <header>
-        <h1>All Users</h1>
+        <h1>All Proposals</h1>
         <div class="header-profile flex-between">
           <button>
             <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -81,13 +82,10 @@
 
 
     <div class="contents">
-      <h2>Content</h2>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat cum, accusamus a nulla explicabo eveniet,
-        distinctio ipsum.
-      </p>
+      
       <!-- component -->
       <!-- This is an example component -->
-      <div class="mx-auto" style="margin-left: 350px; margin-top: 50px; margin-right: 50px;">
+      <div id="all-proposal" class="mx-auto" style="margin-left: 350px; margin-top: 100px; margin-right: 50px;">
 
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
           <div class="p-4">
@@ -101,10 +99,14 @@
                     clip-rule="evenodd"></path>
                 </svg>
               </div>
-              <input type="text" id="table-search"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Search for items">
+              <div class="flex flex-between">
+                <input type="text" id="table-search"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="Search for items">
+                <button class="open-btn" type="button">Create Proposal</button>
+              </div>
             </div>
+
           </div>
           <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -140,10 +142,10 @@
                 <td class="px-6 py-4 flex flex-start gap-x-2">
                   <span>Proposal type 1</span>
                   <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <path
-                      d="M13.4915 1.6665H6.50817C3.47484 1.6665 1.6665 3.47484 1.6665 6.50817V13.4832C1.6665 16.5248 3.47484 18.3332 6.50817 18.3332H13.4832C16.5165 18.3332 18.3248 16.5248 18.3248 13.4915V6.50817C18.3332 3.47484 16.5248 1.6665 13.4915 1.6665ZM14.0165 11.8665L10.4415 15.4415C10.3248 15.5582 10.1665 15.6248 9.99984 15.6248C9.83317 15.6248 9.67484 15.5582 9.55817 15.4415L5.98317 11.8665C5.7415 11.6248 5.7415 11.2248 5.98317 10.9832C6.22484 10.7415 6.62484 10.7415 6.8665 10.9832L9.37484 13.4915V4.99984C9.37484 4.65817 9.65817 4.37484 9.99984 4.37484C10.3415 4.37484 10.6248 4.65817 10.6248 4.99984V13.4915L13.1332 10.9832C13.3748 10.7415 13.7748 10.7415 14.0165 10.9832C14.1415 11.1082 14.1998 11.2665 14.1998 11.4248C14.1998 11.5832 14.1332 11.7498 14.0165 11.8665Z"
-                      fill="#3F64CB" />
-                  </svg></span>
+                      <path
+                        d="M13.4915 1.6665H6.50817C3.47484 1.6665 1.6665 3.47484 1.6665 6.50817V13.4832C1.6665 16.5248 3.47484 18.3332 6.50817 18.3332H13.4832C16.5165 18.3332 18.3248 16.5248 18.3248 13.4915V6.50817C18.3332 3.47484 16.5248 1.6665 13.4915 1.6665ZM14.0165 11.8665L10.4415 15.4415C10.3248 15.5582 10.1665 15.6248 9.99984 15.6248C9.83317 15.6248 9.67484 15.5582 9.55817 15.4415L5.98317 11.8665C5.7415 11.6248 5.7415 11.2248 5.98317 10.9832C6.22484 10.7415 6.62484 10.7415 6.8665 10.9832L9.37484 13.4915V4.99984C9.37484 4.65817 9.65817 4.37484 9.99984 4.37484C10.3415 4.37484 10.6248 4.65817 10.6248 4.99984V13.4915L13.1332 10.9832C13.3748 10.7415 13.7748 10.7415 14.0165 10.9832C14.1415 11.1082 14.1998 11.2665 14.1998 11.4248C14.1998 11.5832 14.1332 11.7498 14.0165 11.8665Z"
+                        fill="#3F64CB" />
+                    </svg></span>
                 </td>
                 <td class="px-6 py-4">
                   05-09-2023
@@ -171,7 +173,7 @@
                 </td>
               </tr>
               <tr class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
-              
+
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
                   Albert Flores
                 </th>
@@ -195,19 +197,21 @@
                 <td class="px-6 py-4 text-right">
                   <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M14 5C14 3.9 13.1 3 12 3C10.9 3 10 3.9 10 5C10 6.1 10.9 7 12 7C13.1 7 14 6.1 14 5Z" stroke="#292d32"
-                        stroke-width="1.5" />
-                      <path d="M14 19C14 17.9 13.1 17 12 17C10.9 17 10 17.9 10 19C10 20.1 10.9 21 12 21C13.1 21 14 20.1 14 19Z"
+                      <path d="M14 5C14 3.9 13.1 3 12 3C10.9 3 10 3.9 10 5C10 6.1 10.9 7 12 7C13.1 7 14 6.1 14 5Z"
                         stroke="#292d32" stroke-width="1.5" />
-                      <path d="M14 12C14 10.9 13.1 10 12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12Z"
+                      <path
+                        d="M14 19C14 17.9 13.1 17 12 17C10.9 17 10 17.9 10 19C10 20.1 10.9 21 12 21C13.1 21 14 20.1 14 19Z"
+                        stroke="#292d32" stroke-width="1.5" />
+                      <path
+                        d="M14 12C14 10.9 13.1 10 12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12Z"
                         stroke="#292d32" stroke-width="1.5" />
                     </svg>
-              
+
                   </a>
                 </td>
               </tr>
               <tr class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
-              
+
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
                   Albert Flores
                 </th>
@@ -231,19 +235,21 @@
                 <td class="px-6 py-4 text-right">
                   <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M14 5C14 3.9 13.1 3 12 3C10.9 3 10 3.9 10 5C10 6.1 10.9 7 12 7C13.1 7 14 6.1 14 5Z" stroke="#292d32"
-                        stroke-width="1.5" />
-                      <path d="M14 19C14 17.9 13.1 17 12 17C10.9 17 10 17.9 10 19C10 20.1 10.9 21 12 21C13.1 21 14 20.1 14 19Z"
+                      <path d="M14 5C14 3.9 13.1 3 12 3C10.9 3 10 3.9 10 5C10 6.1 10.9 7 12 7C13.1 7 14 6.1 14 5Z"
                         stroke="#292d32" stroke-width="1.5" />
-                      <path d="M14 12C14 10.9 13.1 10 12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12Z"
+                      <path
+                        d="M14 19C14 17.9 13.1 17 12 17C10.9 17 10 17.9 10 19C10 20.1 10.9 21 12 21C13.1 21 14 20.1 14 19Z"
+                        stroke="#292d32" stroke-width="1.5" />
+                      <path
+                        d="M14 12C14 10.9 13.1 10 12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12Z"
                         stroke="#292d32" stroke-width="1.5" />
                     </svg>
-              
+
                   </a>
                 </td>
               </tr>
               <tr class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
-              
+
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
                   Albert Flores
                 </th>
@@ -267,19 +273,21 @@
                 <td class="px-6 py-4 text-right">
                   <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M14 5C14 3.9 13.1 3 12 3C10.9 3 10 3.9 10 5C10 6.1 10.9 7 12 7C13.1 7 14 6.1 14 5Z" stroke="#292d32"
-                        stroke-width="1.5" />
-                      <path d="M14 19C14 17.9 13.1 17 12 17C10.9 17 10 17.9 10 19C10 20.1 10.9 21 12 21C13.1 21 14 20.1 14 19Z"
+                      <path d="M14 5C14 3.9 13.1 3 12 3C10.9 3 10 3.9 10 5C10 6.1 10.9 7 12 7C13.1 7 14 6.1 14 5Z"
                         stroke="#292d32" stroke-width="1.5" />
-                      <path d="M14 12C14 10.9 13.1 10 12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12Z"
+                      <path
+                        d="M14 19C14 17.9 13.1 17 12 17C10.9 17 10 17.9 10 19C10 20.1 10.9 21 12 21C13.1 21 14 20.1 14 19Z"
+                        stroke="#292d32" stroke-width="1.5" />
+                      <path
+                        d="M14 12C14 10.9 13.1 10 12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12Z"
                         stroke="#292d32" stroke-width="1.5" />
                     </svg>
-              
+
                   </a>
                 </td>
               </tr>
               <tr class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
-              
+
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
                   Albert Flores
                 </th>
@@ -303,19 +311,21 @@
                 <td class="px-6 py-4 text-right">
                   <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M14 5C14 3.9 13.1 3 12 3C10.9 3 10 3.9 10 5C10 6.1 10.9 7 12 7C13.1 7 14 6.1 14 5Z" stroke="#292d32"
-                        stroke-width="1.5" />
-                      <path d="M14 19C14 17.9 13.1 17 12 17C10.9 17 10 17.9 10 19C10 20.1 10.9 21 12 21C13.1 21 14 20.1 14 19Z"
+                      <path d="M14 5C14 3.9 13.1 3 12 3C10.9 3 10 3.9 10 5C10 6.1 10.9 7 12 7C13.1 7 14 6.1 14 5Z"
                         stroke="#292d32" stroke-width="1.5" />
-                      <path d="M14 12C14 10.9 13.1 10 12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12Z"
+                      <path
+                        d="M14 19C14 17.9 13.1 17 12 17C10.9 17 10 17.9 10 19C10 20.1 10.9 21 12 21C13.1 21 14 20.1 14 19Z"
+                        stroke="#292d32" stroke-width="1.5" />
+                      <path
+                        d="M14 12C14 10.9 13.1 10 12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12Z"
                         stroke="#292d32" stroke-width="1.5" />
                     </svg>
-              
+
                   </a>
                 </td>
               </tr>
               <tr class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
-              
+
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
                   Albert Flores
                 </th>
@@ -339,19 +349,21 @@
                 <td class="px-6 py-4 text-right">
                   <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M14 5C14 3.9 13.1 3 12 3C10.9 3 10 3.9 10 5C10 6.1 10.9 7 12 7C13.1 7 14 6.1 14 5Z" stroke="#292d32"
-                        stroke-width="1.5" />
-                      <path d="M14 19C14 17.9 13.1 17 12 17C10.9 17 10 17.9 10 19C10 20.1 10.9 21 12 21C13.1 21 14 20.1 14 19Z"
+                      <path d="M14 5C14 3.9 13.1 3 12 3C10.9 3 10 3.9 10 5C10 6.1 10.9 7 12 7C13.1 7 14 6.1 14 5Z"
                         stroke="#292d32" stroke-width="1.5" />
-                      <path d="M14 12C14 10.9 13.1 10 12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12Z"
+                      <path
+                        d="M14 19C14 17.9 13.1 17 12 17C10.9 17 10 17.9 10 19C10 20.1 10.9 21 12 21C13.1 21 14 20.1 14 19Z"
+                        stroke="#292d32" stroke-width="1.5" />
+                      <path
+                        d="M14 12C14 10.9 13.1 10 12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12Z"
                         stroke="#292d32" stroke-width="1.5" />
                     </svg>
-              
+
                   </a>
                 </td>
               </tr>
               <tr class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
-              
+
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
                   Albert Flores
                 </th>
@@ -375,19 +387,21 @@
                 <td class="px-6 py-4 text-right">
                   <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M14 5C14 3.9 13.1 3 12 3C10.9 3 10 3.9 10 5C10 6.1 10.9 7 12 7C13.1 7 14 6.1 14 5Z" stroke="#292d32"
-                        stroke-width="1.5" />
-                      <path d="M14 19C14 17.9 13.1 17 12 17C10.9 17 10 17.9 10 19C10 20.1 10.9 21 12 21C13.1 21 14 20.1 14 19Z"
+                      <path d="M14 5C14 3.9 13.1 3 12 3C10.9 3 10 3.9 10 5C10 6.1 10.9 7 12 7C13.1 7 14 6.1 14 5Z"
                         stroke="#292d32" stroke-width="1.5" />
-                      <path d="M14 12C14 10.9 13.1 10 12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12Z"
+                      <path
+                        d="M14 19C14 17.9 13.1 17 12 17C10.9 17 10 17.9 10 19C10 20.1 10.9 21 12 21C13.1 21 14 20.1 14 19Z"
+                        stroke="#292d32" stroke-width="1.5" />
+                      <path
+                        d="M14 12C14 10.9 13.1 10 12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12Z"
                         stroke="#292d32" stroke-width="1.5" />
                     </svg>
-              
+
                   </a>
                 </td>
               </tr>
               <tr class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
-              
+
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
                   Albert Flores
                 </th>
@@ -411,19 +425,21 @@
                 <td class="px-6 py-4 text-right">
                   <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M14 5C14 3.9 13.1 3 12 3C10.9 3 10 3.9 10 5C10 6.1 10.9 7 12 7C13.1 7 14 6.1 14 5Z" stroke="#292d32"
-                        stroke-width="1.5" />
-                      <path d="M14 19C14 17.9 13.1 17 12 17C10.9 17 10 17.9 10 19C10 20.1 10.9 21 12 21C13.1 21 14 20.1 14 19Z"
+                      <path d="M14 5C14 3.9 13.1 3 12 3C10.9 3 10 3.9 10 5C10 6.1 10.9 7 12 7C13.1 7 14 6.1 14 5Z"
                         stroke="#292d32" stroke-width="1.5" />
-                      <path d="M14 12C14 10.9 13.1 10 12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12Z"
+                      <path
+                        d="M14 19C14 17.9 13.1 17 12 17C10.9 17 10 17.9 10 19C10 20.1 10.9 21 12 21C13.1 21 14 20.1 14 19Z"
+                        stroke="#292d32" stroke-width="1.5" />
+                      <path
+                        d="M14 12C14 10.9 13.1 10 12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12Z"
                         stroke="#292d32" stroke-width="1.5" />
                     </svg>
-              
+
                   </a>
                 </td>
               </tr>
               <tr class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
-              
+
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
                   Albert Flores
                 </th>
@@ -447,14 +463,16 @@
                 <td class="px-6 py-4 text-right">
                   <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M14 5C14 3.9 13.1 3 12 3C10.9 3 10 3.9 10 5C10 6.1 10.9 7 12 7C13.1 7 14 6.1 14 5Z" stroke="#292d32"
-                        stroke-width="1.5" />
-                      <path d="M14 19C14 17.9 13.1 17 12 17C10.9 17 10 17.9 10 19C10 20.1 10.9 21 12 21C13.1 21 14 20.1 14 19Z"
+                      <path d="M14 5C14 3.9 13.1 3 12 3C10.9 3 10 3.9 10 5C10 6.1 10.9 7 12 7C13.1 7 14 6.1 14 5Z"
                         stroke="#292d32" stroke-width="1.5" />
-                      <path d="M14 12C14 10.9 13.1 10 12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12Z"
+                      <path
+                        d="M14 19C14 17.9 13.1 17 12 17C10.9 17 10 17.9 10 19C10 20.1 10.9 21 12 21C13.1 21 14 20.1 14 19Z"
+                        stroke="#292d32" stroke-width="1.5" />
+                      <path
+                        d="M14 12C14 10.9 13.1 10 12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12Z"
                         stroke="#292d32" stroke-width="1.5" />
                     </svg>
-              
+
                   </a>
                 </td>
               </tr>
@@ -466,6 +484,7 @@
       </div>
 
       <nav aria-label="Page navigation example">
+        
         <ul class="flex items-center -space-x-px h-8 text-sm">
           <li>
             <a href="#"
@@ -559,8 +578,79 @@
 
 
     </div>
+    <div class="modal-container">
+      <section class="modal hidden">
+        <h3>Create Proposal</h3>
+        
+      
+        <form class="flex flex-col gap-y-6">
+          <div class="flex flex-between gap-x-4">
+            <div class="flex flex-col items-start w-full">
+              <label for="select-proposal-type">Select Proposal Type</label>
+              <select id="select-proposal-type">
+                <option value="">Proposal type 1</option>
+                <option value="">Proposal type 2</option>
+                <option value="">Proposal type 3</option>
+              </select>
+            </div>
+            <div class="flex flex-col items-start w-full">
+              <label for="select-proposal-type">Select Proposal Type</label>
+              <select id="select-proposal-type">
+                <option value="">Proposal type 1</option>
+                <option value="">Proposal type 2</option>
+                <option value="">Proposal type 3</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="proposal-title">Proposal Title</label>
+            <input type="text">
+          </div>
+
+          <div class="submit-proposal">
+            <button type="submit">Create Proposal</button>
+          </div>
+        </form>
+      </section>
+      
     </div>
+    <div class="overlay hidden"></div>
+    
   </section>
+
+  <script>
+    const modal = document.querySelector(".modal");
+    const overlay = document.querySelector(".overlay");
+    const openModalBtn = document.querySelector(".open-btn");
+    const closeModalBtn = document.querySelector(".btn-close");
+
+    // close modal function
+    const closeModal = function () {
+      modal.classList.add("hidden");
+      overlay.classList.add("hidden");
+    };
+
+    // close the modal when the close button and overlay is clicked
+    // closeModalBtn.addEventListener("click", closeModal);
+    overlay.addEventListener("click", closeModal);
+
+    // close modal when the Esc key is pressed
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+        closeModal();
+      }
+    });
+
+    // open modal function
+    const openModal = function () {
+      modal.classList.remove("hidden");
+      overlay.classList.remove("hidden");
+    };
+    // open modal event
+    openModalBtn.addEventListener("click", openModal);
+
+  </script>
 </body>
 
 </html>

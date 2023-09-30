@@ -549,5 +549,145 @@ table {
 }
 
 tr {
-  text-transform: capitalize;
+  text-transform: capitalize
+}
+
+#all-proposal button[type="button"] {
+  color: var(--text-white);
+  font-family: 'Inter';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  flex-shrink: 0;
+  line-height: 32px;
+  width: 202px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: var(--background-blue);
+}
+
+
+
+
+
+
+
+/* MODAL */
+
+
+
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.4rem;
+  width: 40%;
+  padding: 46px;
+  min-height: 250px;
+  position: absolute;
+  z-index: 2;
+  top: 20%;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+}
+
+.modal .flex {
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}
+
+.hidden {
+  display: block !important;
+}
+
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #222;
+  /* position: relative; */
+  background-color: #b3e6f4;
+}
+
+.modal-container select {
+  border: 1px solid black;
+  border-radius: 10px;
+  border: 1px solid #3F64CB;
+  width: 100%;
+  height: 60px;
+  padding-left: 34px;
+
+  color: var(--text-black);
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+  /* 22.4px */
+}
+
+.modal-container input[type="text"] {
+  border: 1px solid black;
+  border-radius: 10px;
+  border: 1px solid #3F64CB;
+  width: 100%;
+  height: 60px;
+  padding-left: 34px;
+}
+
+.modal-container label {
+  color: var(--text-black);
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+  margin-bottom: 16px;
+  /* 22.4px */
+}
+
+.modal-container h3 {
+  color: var(--text-black);
+  font-family: Manrope;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+  margin-bottom: 34px;
+  /* 33.6px */
+}
+
+
+.modal-container .submit-proposal button {
+  width: 50%;
+  height: 64px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: var(--background-blue);
+  color: var(--text-white);
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
