@@ -390,7 +390,9 @@ header button {
 }
 
 .login-form-container input[type="text"],
-.login-form-container input[type="password"] {
+.login-form-container input[type="password"],
+.login-form-container input[type="email"],
+.login-form-container input[type="number"] {
   height: 64px;
   padding-left: 2rem;
   border-radius: 6px;
@@ -799,4 +801,9 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.login-form-container.register-form-container form{
+  gap: 16px;
+  margin-top: 1rem;
 }
