@@ -698,10 +698,11 @@ tr {
 
 
 
-.error-text {
+.error-text,
+.error {
   color: crimson;
   font-weight: bold;
-
+  font-family: "Manrope"
 }
 
 .error-file {
@@ -806,4 +807,8 @@ button {
 .login-form-container.register-form-container form{
   gap: 16px;
   margin-top: 1rem;
+}
+
+.login-form-container.otp-form-container form{
+  gap: 25px;
 }
