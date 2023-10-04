@@ -21,6 +21,11 @@ html {
   --text-gray: #a0aec0;
 }
 
+.dashboard-container {
+  background: #E7EDF4;
+  min-height: 100vh;
+}
+
 ul li,
 ul {
   list-style: none;
@@ -34,6 +39,7 @@ h5,
 h6 {
   font-family: Manrope;
 }
+
 
 a {
   text-decoration: none;
@@ -698,6 +704,7 @@ tr {
 
 
 
+
 .error-text,
 .error {
   color: crimson;
@@ -804,11 +811,53 @@ button {
   justify-content: center;
 }
 
-.login-form-container.register-form-container form{
+.login-form-container.register-form-container form {
   gap: 16px;
   margin-top: 1rem;
 }
 
-.login-form-container.otp-form-container form{
+.login-form-container.otp-form-container form {
   gap: 25px;
+}
+
+.my-proposal td button {
+  border-radius: 100px;
+  background: var(--background-blue);
+  color: var(--text-white);
+  padding: 5px 10px;
+}
+
+.action-btn {
+  background: none !important;
+  outline: none;
+  border: none;
+}
+
+.action-div {
+  position: relative;
+}
+
+.action-div-modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 168px;
+  left: 60px;
+
+
+  border-radius: 20px;
+  background: var(--background-white);
+  box-shadow: 0px 4px 10px 0px #D7E6FF;
+  z-index: 10000;
+}
+
+.action-div-modal h3 {
+  font-size: 16px;
+  height: 102px;
+}
+
+.action-div-modal button {
+  background: none !important;
+  outline: none !important;
+  border: none !important;
 }

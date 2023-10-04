@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Inter&family=Manrope:wght@700&display=swap"
+    rel="stylesheet">
+  <style>
+    .input {
+      margin: 0 10px;
+      text-align: center;
+      cursor: not-allowed;
+      pointer-events: none;
+
+      width: 64px;
+      height: 65px;
+      border-radius: 6px;
+      border: 1px solid #CDCED1;
+      background: #F5F6F7;
+      font-size: 35px;
+      padding: 0 !important;
+    }
+
+    .input:focus {
+      border-bottom: 3px solid orange;
+      outline: none;
+    }
+
+    .input:nth-child(1) {
+      cursor: pointer;
+      pointer-events: all;
+    }
+  </style>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/query.css">
+</head>
+
+<body>
+  <div class="login-container flex-between-grid">
+
+    <div class="logo-image">
+
+    </div>
+    <div class="login-form-container">
+      <div>
+        <h2 class="inline-flex gap-4">Congratulations <span><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M24 4C12.98 4 4 12.98 4 24C4 35.02 12.98 44 24 44C35.02 44 44 35.02 44 24C44 12.98 35.02 4 24 4ZM33.56 19.4L22.22 30.74C21.94 31.02 21.56 31.18 21.16 31.18C20.76 31.18 20.38 31.02 20.1 30.74L14.44 25.08C13.86 24.5 13.86 23.54 14.44 22.96C15.02 22.38 15.98 22.38 16.56 22.96L21.16 27.56L31.44 17.28C32.02 16.7 32.98 16.7 33.56 17.28C34.14 17.86 34.14 18.8 33.56 19.4Z"
+            fill="#3F64CB" />
+        </svg>
+</span> </h2>
+        <p>
+          Lorem, ipsum dolor. Lorem ipsum dolor, sit amet <br> consectetur adipisicing elit. Deleniti quo nobis itaque.
+        </p>
+    
+        
+    
+    
+          <div class="input-div mt-6">
+            <button type="submit">Login</button>
+          </div>
+        
+    
+    
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
