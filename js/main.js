@@ -1,5 +1,25 @@
 const password = document?.querySelector(".input-div.password input");
 const showBtn = document?.querySelector(".login-form-container .show-password button");
+const btnProposal = document?.querySelectorAll(".action-btn");
+const actionDiv = document?.querySelectorAll(".action-div-modal");
+let lastClickedIndex = null; // Keep track of the last clicked button
+
+// MODAL
+
+const modal = document.querySelectorAll(".modal");
+const overlay = document.querySelector(".overlay");
+const openModalBtn = document.querySelector("#create-proposal");
+const closeModalBtn = document.querySelectorAll(".btn-close");
+const open = document.querySelector("#open");
+
+const feed = document.querySelectorAll("#send-feedback")
+
+const feedBackForm = document.getElementById('feedback-form');
+const selectProposalType = document.getElementById('proposal');
+const proposalTitle = document.getElementById('feedback-textarea');
+const type1Error = document.getElementById('proposal-error');
+const titleError = document.getElementById('title-feed-error');
+
 
 showBtn?.addEventListener('click', (e) => {
   e.preventDefault()
@@ -20,8 +40,6 @@ showBtn?.addEventListener('click', (e) => {
 
 
 })
-
-
 
 
 // Function to validate email format
@@ -85,17 +103,10 @@ document.getElementById("loginForm")?.addEventListener("submit", function (e) {
 });
 
 
-
-
-const btnProposal = document?.querySelectorAll(".action-btn");
-const actionDiv = document?.querySelectorAll(".action-div-modal")
-
-let lastClickedIndex = null; // Keep track of the last clicked button
-
 btnProposal?.forEach((item, index) => {
   item.addEventListener("click", (e) => {
-    if (lastClickedIndex !== null) {
-      // Remove the "hidden" class from the old button's actionDiv
+    if (lastClickedIndex !== null && lastClickedIndex !== index) {
+      // Hide the old button's actionDiv if it's not the same as the newly clicked button
       actionDiv[lastClickedIndex].classList.add("hidden");
     }
 
@@ -104,29 +115,26 @@ btnProposal?.forEach((item, index) => {
 
     // Update the lastClickedIndex to the current index
     lastClickedIndex = index;
-  })
-})
+  });
+});
 
 
-
-
-
-
-const modal = document.querySelector(".modal");
-const overlay = document.querySelector(".overlay");
-const openModalBtn = document.querySelector("#create-proposal");
-const closeModalBtn = document.querySelector(".btn-close");
 
 
 // close modal function
-const closeModal = function () {
-  modal?.classList.add("hidden");
+const closeModal = function (index) {
+  modal[parseInt(index)]?.classList.add("hidden");
   overlay?.classList.add("hidden");
 };
 
 // close the modal when the close button and overlay is clicked
-closeModalBtn?.addEventListener("click", closeModal);
-overlay?.addEventListener("click", closeModal);
+closeModalBtn[0]?.addEventListener("click", () => {
+  closeModal(0)
+});
+overlay?.addEventListener("click", () => {
+  closeModal(1)
+  closeModal(0)
+});
 
 // close modal when the Esc key is pressed
 document?.addEventListener("keydown", function (e) {
@@ -137,12 +145,14 @@ document?.addEventListener("keydown", function (e) {
 
 // open modal function
 const openModal = function () {
-  modal?.classList.remove("hidden");
+  modal[0]?.classList.remove("hidden");
   overlay?.classList.remove("hidden");
 };
 // open modal event
-openModalBtn.addEventListener("click", openModal);
-
+openModalBtn?.addEventListener("click", openModal);
+open?.addEventListener("click", () => {
+  openModal();
+});
 
 document.getElementById("file-btn")?.addEventListener("click", (e) => {
   e.preventDefault();
@@ -172,6 +182,7 @@ document.getElementById("myButton")?.addEventListener("change", (e) => {
 
 
 
+
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("proposal-form");
 
@@ -183,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    if (fileInput.files.length === 0) {
+    if (fileInput?.files.length === 0) {
       fileError.innerHTML = "Please select a file before submitting.";
       fileError.classList.toggle("error-file")
       event.preventDefault(); // Prevent form submission
@@ -231,4 +242,183 @@ document.addEventListener("DOMContentLoaded", function () {
     tabOne.classList.add("hidden")
     tabTwo.classList.remove("hidden")
   });
+});
+
+
+
+
+
+
+feed?.forEach((item) => {
+  item?.addEventListener("click", () => {
+    openModal();
+  })
+})
+
+
+
+
+// PDF.JS
+
+
+// If absolute URL from the remote server is provided, configure the CORS
+// header on that server.
+var url = 'resume.pdf';
+
+// Loaded via <script> tag, create shortcut to access PDF.js exports.
+var pdfjsLib = window['pdfjs-dist/build/pdf'];
+
+if (pdfjsLib) {
+
+  // The workerSrc property shall be specified.
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://mozilla.github.io/pdf.js/build/pdf.worker.js';
+
+}
+
+var pdfDoc = null,
+  pageNum = 1,
+  pageRendering = false,
+  pageNumPending = null,
+  scale = 0.8,
+  canvas = document?.getElementById('the-canvas'),
+  ctx = (canvas ? canvas.getContext('2d'): "") 
+
+/**
+ * Get page info from document, resize canvas accordingly, and render page.
+ * @param num Page number.
+ */
+function renderPage(num) {
+  pageRendering = true;
+  // Using promise to fetch the page
+  pdfDoc.getPage(num).then(function (page) {
+    var viewport = page.getViewport({ scale: scale });
+    canvas.height = viewport.height;
+    canvas.width = viewport.width;
+
+    // Render PDF page into canvas context
+    var renderContext = {
+      canvasContext: ctx,
+      viewport: viewport
+    };
+    var renderTask = page.render(renderContext);
+
+    // Wait for rendering to finish
+    renderTask.promise.then(function () {
+      pageRendering = false;
+      if (pageNumPending !== null) {
+        // New page rendering is pending
+        renderPage(pageNumPending);
+        pageNumPending = null;
+      }
+    });
+  });
+
+  // Update page counters
+  // document.getElementById('page_num').textContent = num;
+}
+
+/**
+ * If another page rendering in progress, waits until the rendering is
+ * finised. Otherwise, executes rendering immediately.
+ */
+function queueRenderPage(num) {
+  if (pageRendering) {
+    pageNumPending = num;
+  } else {
+    renderPage(num);
+  }
+}
+
+/**
+ * Displays previous page.
+ */
+function onPrevPage() {
+  if (pageNum <= 1) {
+    return;
+  }
+  pageNum--;
+  queueRenderPage(pageNum);
+}
+document.getElementById('prev')?.addEventListener('click', onPrevPage);
+
+/**
+ * Displays next page.
+ */
+function onNextPage() {
+  if (pageNum >= pdfDoc.numPages) {
+    return;
+  }
+  pageNum++;
+  queueRenderPage(pageNum);
+}
+document.getElementById('next')?.addEventListener('click', onNextPage);
+
+/**
+ * Asynchronously downloads PDF.
+ */
+pdfjsLib?.getDocument(url).promise.then(function (pdfDoc_) {
+  pdfDoc = pdfDoc_;
+  // document.getElementById('page_count').textContent = pdfDoc.numPages;
+
+  // Initial/first page rendering
+  renderPage(pageNum);
+});
+
+
+
+
+feedBackForm?.addEventListener('submit', function (e) {
+  // Reset error messages
+  type1Error.textContent = '';
+  titleError.textContent = '';
+
+  let isValid = true;
+
+  // Proposal Type validation
+  if (selectProposalType.value === '') {
+    type1Error.textContent = 'Please select a proposal type.';
+    isValid = false;
+  }
+
+  // Proposal Title validation
+  if (proposalTitle.value.trim() === '') {
+    titleError.textContent = 'Please enter a proposal title.';
+    isValid = false;
+  }
+
+  // If any validation fails, prevent form submission
+  if (!isValid) {
+    e.preventDefault();
+  } else {
+    e.preventDefault();
+    // Only if the form is valid, hide tabOne and show tabTwo
+    const tabOne = document.querySelector("#tabOne");
+    const tabTwo = document.querySelector("#tabTwo");
+    tabOne.classList.add("hidden");
+    tabTwo.classList.remove("hidden");
+  }
+});
+
+
+
+const proBtn = document.querySelectorAll("#view-proposal");
+
+proBtn.forEach((item) => {
+  item.addEventListener("click", () => {
+    openModalPro();
+  })
+})
+
+// open modal function
+const openModalPro = function () {
+  modal[1]?.classList.remove("hidden");
+  overlay?.classList.remove("hidden");
+};
+
+
+// close modal function
+
+// close the modal when the close button and overlay is clicked
+closeModalBtn[1]?.addEventListener("click", () => {
+  closeModal(1)
 });

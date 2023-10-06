@@ -722,7 +722,7 @@ tr {
   flex-direction: column;
   justify-content: center;
   gap: 0.4rem;
-  width: 42%;
+  width: 50%;
   padding: 1.3rem;
   min-height: 250px;
   position: absolute;
@@ -731,6 +731,11 @@ tr {
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 15px;
+
+
+  min-height: 50vh;
+  height: 70vh;
+  overflow-y: scroll;
 }
 
 .modal .flex {
@@ -790,12 +795,12 @@ button {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(1px);
   z-index: 1;
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .tab-two {
@@ -860,4 +865,239 @@ button {
   background: none !important;
   outline: none !important;
   border: none !important;
+}
+
+#feedback-textarea {
+  border-radius: 10px;
+  border: 1px solid #3F64CB;
+  width: 100%;
+  margin-top: 16px;
+  padding-left: 34px;
+  padding-top: 34px;
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+#feedback-textarea ::placeholder {
+  color: rgba(134, 146, 166, 0.38);
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+}
+
+.pdf-flex-center {
+
+  height: 100vh;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.parent {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.centered-div {
+  padding: 15px;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#the-canvas {
+  width: 100%;
+}
+
+
+#prev,
+#next {}
+
+.pre-nex {
+  display: flex;
+  gap: 10px;
+  margin-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+.pre-nex button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: #3F64CB;
+  color: var(--text-white);
+
+  width: 200px;
+  height: 64px;
+}
+
+
+
+
+/* scrollbar */
+
+.modal {
+  /* Apply custom scrollbar styles to this section */
+  scrollbar-width: thin;
+  scrollbar-color: #2980b9 #3498db;
+}
+
+.modal::-webkit-scrollbar {
+  width: 12px;
+}
+
+.modal::-webkit-scrollbar-track {
+  background-color: var(--background-white);
+  /* Blue background for the track */
+}
+
+.modal::-webkit-scrollbar-thumb {
+  background-color: #2980b9;
+  /* Blue background for the scrollbar thumb */
+  border-radius: 6px;
+  /* Round the corners of the thumb */
+}
+
+.modal::-webkit-scrollbar-thumb:hover {
+  background-color: #1f618d;
+  /* Darker blue on hover */
+}
+
+
+
+
+#profile-form .profile-form-container {
+  display: grid;
+  grid-template-columns: 40% 40%;
+  gap: 2rem;
+  row-gap: 2.5rem;
+}
+
+
+#profile-form .input-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#profile-form input {
+  height: 64px;
+
+  color: #8692A6;
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+#profile-form input,
+#profile-form textarea {
+  border-radius: 6px;
+  background: #EEF4FF;
+  padding-left: 34px;
+  border: none;
+}
+
+#profile-form label {
+  color: #696F79;
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+#profile-form {
+  border-radius: 20px;
+  background: #FFF;
+  padding: 3.5rem 6rem;
+}
+
+#profile-form .input-fields.textarea {
+  grid-column: 1/-1;
+}
+
+#profile-form textarea {
+  height: 157px;
+  padding-top: 34px;
+}
+
+
+#profile-form button[type="submit"] {
+  border-radius: 10px;
+  background: #3F64CB;
+  width: 305px;
+  height: 64px;
+  flex-shrink: 0;
+  margin-top: 2rem;
+
+  color: var(--text-white);
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+#otp-form .input {
+  margin: 0 10px;
+  text-align: center;
+  cursor: not-allowed;
+  pointer-events: none;
+
+  width: 64px;
+  height: 65px;
+  border-radius: 6px;
+  border: 1px solid #CDCED1;
+  background: #F5F6F7;
+  font-size: 35px;
+  padding: 0 !important;
+}
+
+#otp-form .input:focus {
+  border-bottom: 3px solid orange;
+  outline: none;
+}
+
+#otp-form .input:nth-child(1) {
+  cursor: pointer;
+  pointer-events: all;
+}
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+  .login-container .logo-image {
+    display: none;
+  }
+
+  .login-container {
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  .input-div {
+    width: 100%;
+  }
+
+  .flex-between-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .login-container .login-form-container {
+    padding: 10px;
+  }
 }
