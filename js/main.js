@@ -439,3 +439,81 @@ if (width <= 768) {
 toggleBtn?.addEventListener("click", (e) => {
   sidebar?.classList.toggle("show")
 })
+
+
+
+
+
+
+const inputs = document.getElementById("inputs");
+
+inputs?.addEventListener("input", function (e) {
+  const target = e.target;
+  const val = target.value;
+
+  if (isNaN(val)) {
+    target.value = "";
+    return;
+  }
+
+  if (val != "") {
+    const next = target.nextElementSibling;
+    if (next) {
+      next.focus();
+    }
+  }
+});
+
+inputs?.addEventListener("keyup", function (e) {
+  const target = e.target;
+  const key = e.key.toLowerCase();
+
+  if (key == "backspace" || key == "delete") {
+    target.value = "";
+    const prev = target.previousElementSibling;
+    if (prev) {
+      prev.focus();
+    }
+    return;
+  }
+});
+
+
+
+
+document?.addEventListener('DOMContentLoaded', function () {
+  const otpForm = document.querySelector('#otp-form');
+  const otpInputs = otpForm?.querySelectorAll('.input');
+  const err = document?.querySelector(".otp-error")
+
+  otpForm?.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    let isValid = true;
+    err.textContent = ""
+
+    otpInputs?.forEach((input, index) => {
+      const value = input.value.trim();
+
+      if (!/^\d$/.test(value)) {
+        isValid = false;
+        err.textContent = "Enter a valid otp"
+      }
+
+      if (value === '') {
+        isValid = false;
+        err.textContent = "Enter a valid otp"
+      }
+
+      setTimeout(() => {
+        err.textContent = ""
+      }, 5000);
+    });
+
+    if (isValid) {
+      // Continue with form submission or other actions
+      alert('OTP is valid. Proceed with form submission.');
+      otpForm.reset(); // Optionally, reset the form after successful validation.
+    }
+  });
+});

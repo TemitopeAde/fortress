@@ -50,6 +50,15 @@ a {
   align-items: center;
   justify-content: flex-start;
   gap: 12px;
+  transition: .7s;
+}
+
+.navigation li:hover svg path {
+  stroke: var(--text-gray)
+}
+
+.navigation li:hover {
+  transform: translateX(10px);
 }
 
 .flex-between {
@@ -1157,6 +1166,9 @@ button {
 
 
 
+
+
+
 @media screen and (max-width: 768px) {
   .proposal-container {
     width: 100%;
@@ -1268,3 +1280,6 @@ button {
     margin-top: 5rem;
   }
 }
+
+
+
