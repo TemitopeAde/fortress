@@ -281,7 +281,7 @@ var pdfDoc = null,
   pageNumPending = null,
   scale = 0.8,
   canvas = document?.getElementById('the-canvas'),
-  ctx = (canvas ? canvas.getContext('2d'): "") 
+  ctx = (canvas ? canvas.getContext('2d') : "")
 
 /**
  * Get page info from document, resize canvas accordingly, and render page.
@@ -422,3 +422,20 @@ const openModalPro = function () {
 closeModalBtn[1]?.addEventListener("click", () => {
   closeModal(1)
 });
+
+
+
+
+const width = window.innerWidth;
+const slider = document.querySelector(".slider-container");
+const sidebar = document.querySelector(".sidebar");
+const toggleBtn = document.querySelector("#toogle-button")
+
+if (width <= 768) {
+  slider.classList.remove("slider-item-show3")
+  slider.classList.add("slider-item-show2")
+}
+
+toggleBtn.addEventListener("click", (e) => {
+  sidebar.classList.toggle("show")
+})
