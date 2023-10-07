@@ -21,6 +21,18 @@ html {
   --text-gray: #a0aec0;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .dashboard-container {
   background: #E7EDF4;
   min-height: 100vh;
@@ -258,12 +270,18 @@ header button {
   color: var(--text-green);
 }
 
+#mobile-title {
+  display: none;
+}
+
 .feedback-container {
   margin-top: 25px;
   border-radius: 20px;
   background: var(--background-white);
   backdrop-filter: blur(60px);
-  padding: 1.2rem 2rem;
+  /* padding: 1.2rem 2rem; */
+  padding: 25px;
+  overflow-x: auto;
 
   padding-bottom: 0;
 }
@@ -1170,6 +1188,26 @@ button {
 
 
 @media screen and (max-width: 768px) {
+
+  #profile-form {
+    margin-top: 5rem;
+    padding: 3.5rem 10px;
+
+  }
+
+  #profile-form .profile-form-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    row-gap: 1.5rem;
+  }
+
+  #mobile-title {
+    display: block;
+    text-align: center;
+    margin: 15px 0;
+    margin-bottom: 25px;
+  }
+
   .proposal-container {
     width: 100%;
     padding: .8rem;
@@ -1279,7 +1317,9 @@ button {
   .feedback-container {
     margin-top: 5rem;
   }
+
+  #loginForm label,
+  #loginForm span {
+    text-align: initial;
+  }
 }
-
-
-

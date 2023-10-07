@@ -446,6 +446,7 @@ toggleBtn?.addEventListener("click", (e) => {
 
 
 const inputs = document.getElementById("inputs");
+const title = document.getElementById("mobile-title");
 
 inputs?.addEventListener("input", function (e) {
   const target = e.target;
@@ -514,6 +515,73 @@ document?.addEventListener('DOMContentLoaded', function () {
       // Continue with form submission or other actions
       alert('OTP is valid. Proceed with form submission.');
       otpForm.reset(); // Optionally, reset the form after successful validation.
+    }
+  });
+});
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("profile-form");
+
+  form.addEventListener("submit", function (e) {
+    // Remove any previously displayed error messages
+    const errorSpans = document.querySelectorAll(".error");
+    errorSpans.forEach((span) => {
+      span.textContent = "";
+    });
+
+    let isValid = true;
+
+    // Validation for First Name
+    const firstNameInput = document.getElementById("first-name");
+    const firstNameError = document.getElementById("first-name-error");
+    if (firstNameInput.value.trim() === "") {
+      firstNameError.textContent = "First Name is required.";
+      isValid = false;
+    }
+
+    // Validation for Last Name
+    const lastNameInput = document.getElementById("last-name");
+    const lastNameError = document.getElementById("last-name-error");
+    if (lastNameInput.value.trim() === "") {
+      lastNameError.textContent = "Last Name is required.";
+      isValid = false;
+    }
+
+    // Validation for Phone Number
+    const phoneNumberInput = document.getElementById("phone-number");
+    const phoneNumberError = document.getElementById("phone-number-error");
+    const phoneNumberPattern = /^\d{10}$/; // Assuming 10-digit phone number
+    if (!phoneNumberPattern.test(phoneNumberInput.value)) {
+      phoneNumberError.textContent = "Please enter a valid 10-digit phone number.";
+      isValid = false;
+    }
+
+    // Validation for Email Address
+    const emailInput = document.getElementById("email");
+    const emailError = document.getElementById("email-error");
+    const emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+    if (!emailPattern.test(emailInput.value)) {
+      emailError.textContent = "Please enter a valid email address.";
+      isValid = false;
+    }
+
+    // Validation for Address (optional)
+    const addressInput = document.getElementById("address");
+    const addressError = document.getElementById("address-error");
+
+    if (addressInput.value.trim() === "") {
+      addressError.textContent = "Enter a valid address"
+    } else if (addressInput.value.length < 10) {
+      addressError.textContent = "Address value too short"
+    }
+
+    if (!isValid) {
+      e.preventDefault(); // Prevent form submission
     }
   });
 });
