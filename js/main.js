@@ -21,6 +21,11 @@ const type1Error = document.getElementById('proposal-error');
 const titleError = document.getElementById('title-feed-error');
 
 
+const width = window.innerWidth;
+const slider = document.querySelector(".slider-container");
+const sidebar = document.querySelector(".sidebar");
+const toggleBtn = document.querySelector("#toogle-button")
+
 showBtn?.addEventListener('click', (e) => {
   e.preventDefault()
   switch (password.type) {
@@ -426,16 +431,11 @@ closeModalBtn[1]?.addEventListener("click", () => {
 
 
 
-const width = window.innerWidth;
-const slider = document.querySelector(".slider-container");
-const sidebar = document.querySelector(".sidebar");
-const toggleBtn = document.querySelector("#toogle-button")
-
 if (width <= 768) {
-  slider.classList.remove("slider-item-show3")
-  slider.classList.add("slider-item-show2")
+  slider?.classList.remove("slider-item-show3")
+  slider?.classList.add("slider-item-show2")
 }
 
-toggleBtn.addEventListener("click", (e) => {
-  sidebar.classList.toggle("show")
+toggleBtn?.addEventListener("click", (e) => {
+  sidebar?.classList.toggle("show")
 })

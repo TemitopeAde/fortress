@@ -1217,6 +1217,7 @@ button {
     padding: 0 10px;
     display: block;
     height: 82px;
+    position: fixed;
   }
 
   #mobile-header ul {
@@ -1232,11 +1233,12 @@ button {
 
   .show {
     transform: translateX(0) !important;
-    z-index: 100 !important;
+    z-index: 100000000 !important;
     position: fixed !important;
     transition: .65s;
     background: white !important;
-    width: 264px;
+    width: 264px !important;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
   }
 
   .dashboard-container .sidebar {
@@ -1255,5 +1257,14 @@ button {
   .feedback-container {
     padding: 10px;
     padding-bottom: 0;
+  }
+
+  tr,
+  td button {
+    font-size: .7rem;
+  }
+
+  .feedback-container {
+    margin-top: 5rem;
   }
 }
