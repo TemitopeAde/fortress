@@ -1231,12 +1231,28 @@ button {
 }
 
 
+.chart__section {
+  padding: 1.5rem;
+  margin: 3rem 0;
+  ;
+  background: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 20px;
+}
+
+#myChart {
+  width: 100%;
+  height: auto;
+}
 
 
+.chart__section label {
+  font-family: 'Manrope';
+}
 
-
-
-
+.chart__section select {
+  width: 70px
+}
 
 
 
@@ -1250,6 +1266,14 @@ button {
 
 
 @media screen and (max-width: 768px) {
+
+  .chart__section {
+    padding: .4rem;
+    margin: 1rem 0;
+    background: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 20px;
+  }
 
   #profile-form {
     margin-top: 5rem;
@@ -1304,6 +1328,7 @@ button {
     position: static;
     overflow-y: scroll;
     padding: 10px 10px;
+    margin-top: 8rem;
   }
 
   .dashboard-container header {
