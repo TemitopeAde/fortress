@@ -966,21 +966,35 @@
         instance = loadedInstance; // Store the instance
         console.log('Successfully mounted PSPDFKit', instance);
       })
+
+
+      document.getElementById("sign-button").addEventListener("click", () => {
+        if (instance) {
+          instance
+            .signDocument(null, generatePKCS7)
+            .then(() => {
+              return instance.exportPDF()
+            })
+            .then((signedDocument) => {
+              const signedDocumentBlob = new Blob([signedDocument], { type: 'application/pdf' });
+
+              // Convert Blob to a download link
+              const downloadLink = document.createElement('a');
+              downloadLink.href = URL.createObjectURL(signedDocumentBlob);
+              downloadLink.download = 'signed_document.pdf';
+              downloadLink.click();
+
+              console.log(signedDocumentBlob)
+              // Send the signed document to the server
+              // sendSignedDocumentToServer(signedDocument);
+            })
+            .catch((error) => {
+              console.error('Error signing or sending the document:', error);
+            });
+        }
+      });
       
 
-    // Add a click event listener to the "Sign Document" button
-    document.getElementById("sign-button").addEventListener("click", () => {
-      if (instance) {
-        instance
-          .signDocument(null, generatePKCS7)
-          .then(() => {
-            console.log('Document signed.');
-          })
-          .catch((error) => {
-            console.error('The document could not be signed.', error);
-          });
-      }
-    });
 
     function generatePKCS7({ fileContents }) {
         const certificatePromise = fetch(
